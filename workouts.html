@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Atlas - Generator</title>
+    <link rel="stylesheet" href="HomePageStyle.css"> <link rel="stylesheet" href="WorkoutsStyle.css"> </head>
+<body>
+
+    <header class="header">
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <li><a href="index.html" style="color: #94a3b8; text-decoration: none;">Начало</a></li>
+        
+        <li><a href="workouts.html" style="color: #94a3b8; text-decoration: none;">Тренировки</a></li>
+        <li><a href="tools.html" style="color: #94a3b8; text-decoration: none;">Инструменти</a></li>
+        <li><a href="Progress.html" style="color: #94a3b8; text-decoration: none;">Напредък</a></li>
+
+        <li id="user-display" style="color: #ff4757; font-weight: bold; display: none;">Guest</li>
+
+        <li id="logout-li" style="display: none;">
+            <span id="logout-btn" style="cursor: pointer; color: #94a3b8;">Logout</span>
+        </li>
+        
+        <li id="login-li">
+            <a href="auth/login.html" style="color: white; text-decoration: none;">Login</a>
+        </li>
+      </ul>
+    </nav>
+</header>
+
+    <main>
+        <div class="workout-container">
+            <h1 class="page-title">Генератор на Тренировъчни Програми</h1>
+            <p class="subtitle">Избери своя сплит и ние ще сглобим тренировката за теб.</p>
+
+            <div class="split-selection">
+                <button onclick="generateSplit('ppl')" class="split-btn">Бутащи / Дърпащи / Крака (PPL)</button>
+                <button onclick="generateSplit('upper_lower')" class="split-btn">Горна / Долна част</button>
+                <button onclick="generateSplit('bro_split')" class="split-btn">Бро Сплит (5 Дни)</button>
+                <button onclick="generateSplit('full_body')" class="split-btn">Цяло тяло (Full Body)</button>
+            </div>
+
+            <div id="loading" style="display: none; margin-top: 20px;">
+                <p>Генериране на тренировка... (Теглим упражнения от базата)</p>
+            </div>
+
+            <div id="workout-result" class="workout-grid"></div>
+        </div>
+    </main>
+
+    <script type="module" src="WorkoutsScript.js"></script>
+</body>
+</html>

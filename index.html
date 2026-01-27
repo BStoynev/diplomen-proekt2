@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Atlas</title>
+  <link rel="stylesheet" href="HomePageStyle.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <li><a href="index.html" style="color: #ff4757; text-decoration: none;">Начало</a></li>
+        <li><a href="workouts.html" style="color: #94a3b8; text-decoration: none;">Тренировки</a></li>
+        <li><a href="tools.html" style="color: #94a3b8; text-decoration: none;">Инструменти</a></li>
+        <li><a href="Progress.html" style="color: #94a3b8; text-decoration: none;">Напредък</a></li>
+
+        <li id="user-display" style="color: #ff4757; font-weight: bold; display: none;">Гост</li>
+
+        <li id="logout-li" style="display: none;">
+            <span id="logout-btn" style="cursor: pointer; color: #94a3b8;">Изход</span>
+        </li>
+        
+        <li id="login-li">
+            <a href="auth/login.html" style="color: white; text-decoration: none;">Вход</a>
+        </li>
+      </ul>
+    </nav>
+</header>
+  
+  <main>
+    <div class="app-container">
+        <div class="model-box">
+            <div class="view-toggle">
+                <button id="btn-front" class="active-view">Отпред</button>
+                <button id="btn-back">Отзад</button>
+            </div>
+            <svg viewBox="0 0 660.46 1206.46" id="human-svg"></svg>
+            <div id="hover-label">Избери мускул</div>
+        </div>
+
+        <div class="info-box">
+            
+            <div id="admin-panel" class="hidden">
+               <h3 style="color: #ff4757;">Администратор: Добави Упражнение</h3>
+    
+              <input type="text" id="ex-name" placeholder="Име на Упражнение">
+              <select id="ex-muscle-select"></select> <input type="text" id="ex-image" placeholder="URL на Изображение (линк до изображение)">
+              <input type="text" id="ex-video" placeholder="Линк до Youtube видео">
+    
+              <textarea id="ex-desc" placeholder="Описание..."></textarea>
+              <button id="save-btn" class="save-btn">Добави</button>
+            </div>
+
+            <div id="results">
+                <h2 id="selected-muscle-title">Кликни на мускул</h2>
+                <div id="exercise-cards"></div>
+            </div>
+        </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="HomePageScript.js"></script>
+</body>
+</html>

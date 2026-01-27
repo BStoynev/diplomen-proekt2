@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    min-height: 100vh;
+}
+
+/* --- NAVIGATION (Копирано за консистентност) --- */
+.header { background-color: #1e293b; padding: 20px 0; border-bottom: 1px solid #334155; }
+.nav-bar { width: 100%; display: flex; justify-content: center; }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links li { font-size: 18px; cursor: pointer; transition: 0.3s; }
+.nav-links a { text-decoration: none; color: #94a3b8; transition: 0.3s; }
+.nav-links a:hover, .nav-links .active-link { color: #ff4757; }
+
+/* --- MAIN CONTAINER --- */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.calculator-container {
+    background: #1e293b;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #334155;
+}
+
+h2 { text-align: center; color: #ff4757; margin-bottom: 5px; }
+.subtitle { text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 0.9em; }
+
+/* --- FORM STYLES --- */
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; color: #cbd5e1; font-size: 0.9em; }
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-box input, .input-box select {
+    width: 100%;
+    height: 45px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus, .input-box select:focus {
+    border-color: #ff4757;
+}
+
+.calc-btn {
+    width: 100%;
+    height: 50px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.calc-btn:hover {
+    background: #e84118;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
+}
+
+/* --- RESULTS SECTION --- */
+.hidden { display: none; }
+
+#result-box {
+    margin-top: 30px;
+    border-top: 2px solid #334155;
+    padding-top: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+#result-box h3 { text-align: center; margin-bottom: 20px; color: #fff; }
+
+.result-card {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #334155;
+}
+
+.result-card span { display: block; color: #94a3b8; font-size: 0.85em; margin-bottom: 5px; }
+.result-card strong { font-size: 1.4em; color: #fff; }
+
+.maintenance { border-left: 4px solid #3498db; }
+.cut { border-left: 4px solid #f1c40f; }
+.bulk { border-left: 4px solid #ff4757; }
+
+.result-row {
+    display: flex;
+    gap: 10px;
+}
+
+.result-row .result-card { flex: 1; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .input-grid { grid-template-columns: 1fr; }
+}

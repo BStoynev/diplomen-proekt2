@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitnessBuddy</title>
+  <link rel="stylesheet" href="register-style.css"> <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <form id="registerForm">
+      <h2>Регистрация</h2>
+      
+      <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        <input type="text" name="fullname" required placeholder="Пълно Име">
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" name="email" required placeholder="Email">
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" name="password" required placeholder="Парола">
+      </div>
+
+      <div class="input-box">
+        <select name="role" style="width:100%; height:50px; background:#333; color:white; border:2px solid #333; border-radius:5px; padding:0 10px; cursor:pointer;">
+            <option value="user">Потребител</option>
+            <option value="admin">Администратор</option>
+        </select>
+      </div>
+
+      <button type="submit">Регистрация</button>
+
+      <div class="register-link">
+        <p>Вече имаш профил? <a href="login.html">Вход</a></p>
+      </div>
+    </form>
+  </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // --- ПОСТАВИ СЪЩИЯ FIREBASE CONFIG ТУК ---
+    const firebaseConfig = { 
+        apiKey: "AIzaSyDn3ywqs_Vzf5sbt7KrRvS7i-nHnl2blUQ",
+        authDomain: "fitnessbuddy-9e388.firebaseapp.com",
+        projectId: "fitnessbuddy-9e388",
+        storageBucket: "fitnessbuddy-9e388.firebasestorage.app",
+        messagingSenderId: "809386372688",
+        appId: "1:809386372688:web:cf8a81e2c4db183be7ab55",
+        measurementId: "G-6E3M3NCN6Z"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Взимаме данните от формата
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const role = form.role.value; // user или admin
+
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // Записваме ролята на потребителя в базата данни
+            await setDoc(doc(db, "users", user.uid), {
+                email: email,
+                role: role
+            });
+
+            alert("Registration successful!");
+            window.location.href = "../index.html";
+
+        } catch (error) {
+            alert("Error: " + error.message);
+        }
+    });
+  </script>
+</body>
+</html>

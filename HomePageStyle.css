@@ -1,0 +1,91 @@
+/* ... (Запази предишните CSS настройки за body, header и nav) ... */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: Arial, sans-serif; background: #0f172a; color: white; }
+
+.header { background-color: #1e293b; padding: 20px 0; border-bottom: 1px 
+solid #334155; }
+
+.nav-bar { width: 100%; display: flex; justify-content: center; }
+
+.nav-links { list-style: none; display: flex; gap: 30px; }
+
+.nav-links li { color: #94a3b8; font-size: 18px; cursor: pointer; transition: 0.3s; }
+
+.nav-links li:hover { color: #ff4757; }
+
+/* ОСНОВНА ЧАСТ */
+main { padding: 40px; display: flex; justify-content: center; }
+
+.app-container { display: flex; gap: 50px; width: 100%; max-width: 1200px; flex-wrap: wrap; justify-content: center; }
+
+/* МОДЕЛ КУТИЯ */
+.model-box {
+    width: 400px;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* БУТОНИ ЗА СМЯНА НА ИЗГЛЕДА */
+.view-toggle {
+    margin-bottom: 15px;
+    background: #0f172a;
+    padding: 5px;
+    border-radius: 30px;
+    display: flex;
+    gap: 5px;
+}
+
+.view-toggle button {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.view-toggle button.active-view {
+    background: #ff4757;
+    color: white;
+}
+
+svg { width: 100%; height: auto; filter: drop-shadow(0 0 10px rgba(0,0,0,0.3)); }
+
+#hover-label {
+    text-align: center; margin-top: 10px; color: #94a3b8;
+    font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* ИНФО КУТИЯ */
+.info-box { flex: 1; min-width: 300px; max-width: 600px; }
+h2 { color: #ff4757; border-bottom: 2px solid #334155; padding-bottom: 10px; margin-bottom: 20px; }
+
+.exercise-card {
+    background: #1e293b; padding: 20px; margin-bottom: 15px;
+    border-radius: 10px; border-left: 4px solid #ff4757;
+    animation: fadeIn 0.3s ease;
+}
+.exercise-card h3 { margin-bottom: 5px; color: #fff; }
+.exercise-card p { color: #cbd5e1; font-size: 14px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* АДМИН И МУСКУЛИ */
+.hidden { display: none; }
+#admin-panel { background: #334155; padding: 20px; border-radius: 10px; margin-bottom: 30px; border: 1px solid #475569; }
+input, select, textarea { width: 100%; padding: 10px; margin-bottom: 10px; background: #0f172a; border: 1px solid #475569; color: white; border-radius: 5px; }
+.save-btn { background: #ff4757; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-weight: bold; width: 100%; }
+
+.muscle-path { fill: #e7ecef; transition: fill 0.2s ease; cursor: pointer; }
+.muscle-path:hover { fill: #6366f1; }
+.active-muscle { fill: #ff4757 !important; filter: drop-shadow(0 0 5px #ff4757); }

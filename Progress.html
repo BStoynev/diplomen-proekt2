@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моят Напредък - Fitness Atlas</title>
+    <link rel="stylesheet" href="HomePageStyle.css"> <link rel="stylesheet" href="ProgressStyle.css"> </head>
+<body>
+
+    <header class="header">
+        <nav class="nav-bar">
+          <ul class="nav-links">
+        <li><a href="index.html" style="color: #94a3b8; text-decoration: none;">Начало</a></li>
+        
+        <li><a href="workouts.html" style="color: #94a3b8; text-decoration: none;">Тренировки</a></li>
+        <li><a href="tools.html" style="color: #94a3b8; text-decoration: none;">Инструменти</a></li>
+        <li><a href="Progress.html" style="color: #ff4757; text-decoration: none;">Напредък</a></li>
+
+        <li id="user-display" style="color: #ff4757; font-weight: bold; display: none;">Guest</li>
+
+        <li id="logout-li" style="display: none;">
+            <span id="logout-btn" style="cursor: pointer; color: #94a3b8;">Logout</span>
+        </li>
+        
+        <li id="login-li">
+            <a href="auth/login.html" style="color: white; text-decoration: none;">Login</a>
+        </li>
+      </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="progress-container">
+            <h1>Дневник на Напредъка</h1>
+            
+            <div id="tracker-app" style="display: none;">
+                
+                <div class="log-form">
+                    <h3>Добави серия</h3>
+                    <div class="input-group">
+                        <input type="text" id="p-name" placeholder="Упражнение (напр. Лег)">
+                        <input type="number" id="p-weight" placeholder="Кг">
+                        <input type="number" id="p-sets" placeholder="Серии">
+                        <input type="number" id="p-reps" placeholder="Повторения">
+                        <button id="add-progress-btn">Запиши</button>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>История на тренировките</h3>
+                    <div id="history-list">
+                        <p>Зареждане...</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="guest-msg" style="text-align: center; margin-top: 50px;">
+                <p>Моля, <a href="auth/login.html" style="color: #ff4757;">влезте в профила си</a>, за да следите напредъка си.</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="ProgressScript.js"></script>
+</body>
+</html>

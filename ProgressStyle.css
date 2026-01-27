@@ -1,0 +1,114 @@
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.progress-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff4757;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #94a3b8;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+/* Форма за добавяне */
+.log-form {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 10px;
+}
+
+input {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+button#add-progress-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button#add-progress-btn:hover {
+    background: #e11d48;
+}
+
+/* История (Списък) */
+.history-item {
+    background: #1e293b;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #3b82f6; /* Синя лента */
+}
+
+.history-info strong {
+    font-size: 1.1rem;
+    display: block;
+}
+
+.history-stats {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.history-date {
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* За мобилни устройства */
+@media (max-width: 600px) {
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+    button#add-progress-btn {
+        padding: 15px;
+    }
+}

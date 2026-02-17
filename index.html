@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fitness Atlas</title>
+  <title>FitnessBuddy</title>
   <link rel="stylesheet" href="HomePageStyle.css">
 </head>
 <body>
@@ -32,25 +32,29 @@
   <main>
     <div class="app-container">
         <div class="model-box">
-            <div class="view-toggle">
+            
+            <div class="view-toggle gender-toggle" style="top: 20px;">
+                <button id="btn-male" class="active-view">Мъж</button>
+                <button id="btn-female">Жена</button>
+            </div>
+
+            <div class="view-toggle" style="top: 70px;">
                 <button id="btn-front" class="active-view">Отпред</button>
                 <button id="btn-back">Отзад</button>
             </div>
-            <svg viewBox="0 0 660.46 1206.46" id="human-svg"></svg>
+
+            <svg viewBox="0 0 660.46 1206.46" id="human-svg" id="body-svg">
+                </svg>
+            
             <div id="hover-label">Избери мускул</div>
         </div>
 
         <div class="info-box">
-            
             <div id="admin-panel" class="hidden">
                <h3 style="color: #ff4757;">Администратор: Добави Упражнение</h3>
-    
-              <input type="text" id="ex-name" placeholder="Име на Упражнение">
-              <select id="ex-muscle-select"></select> <input type="text" id="ex-image" placeholder="URL на Изображение (линк до изображение)">
-              <input type="text" id="ex-video" placeholder="Линк до Youtube видео">
-    
-              <textarea id="ex-desc" placeholder="Описание..."></textarea>
-              <button id="save-btn" class="save-btn">Добави</button>
+               <input type="text" id="ex-name" placeholder="Име на Упражнение">
+               <textarea id="ex-desc" placeholder="Описание..."></textarea>
+               <button id="save-btn" class="save-btn">Добави</button>
             </div>
 
             <div id="results">
@@ -60,7 +64,7 @@
         </div>
 
     </div>
-  </main>
+</main>
 
   <script type="module" src="HomePageScript.js"></script>
 </body>
